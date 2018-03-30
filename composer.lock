@@ -2031,7 +2031,6 @@
             "homepage": "https://github.com/PHPOffice/PhpSpreadsheet",
             "keywords": [
                 "OpenXML",
-                "excel",
                 "gnumeric",
                 "ods",
                 "php",
