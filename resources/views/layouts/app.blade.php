@@ -8,8 +8,9 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('title', 'BanxianBBS')</title>
-    <meta name="description" content="@yield('description', 'BanxianBBS')" />
+    <title>@yield('title', 'BanxianBBS') - {{ setting('site_name', 'Aries') }}</title>
+    <meta name="description" content="@yield('description', setting('seo_description', 'BanxianBBS'))" />
+    <meta name="keyword" content="@yield('keyword', setting('seo_keyword', 'BanxianBBS,社区,论坛,开发者论坛'))" />
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
