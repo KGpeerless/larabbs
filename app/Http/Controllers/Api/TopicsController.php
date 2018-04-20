@@ -71,6 +71,15 @@ class TopicsController extends Controller
 
     public function show(Topic $topic)
     {
+        try {
+            $topic->increment('view_count', 1);
+            $topic->save();
+        } catch (\Excption $e) {
+            abort(500, '累计查看次数错误');
+
+            return false;
+        }
+
         return $this->response->item($topic, new TopicTransformer());
     }
 }
