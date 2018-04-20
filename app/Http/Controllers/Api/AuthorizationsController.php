@@ -81,11 +81,11 @@ class AuthorizationsController extends Controller
         return $this->respondWithToken($token);
     }
 
-    public function destroy()
-    {
-        Auth::guard('api')->logout();
-        return $this->response->noContent();
-    }
+    // public function destroy()
+    // {
+    //     Auth::guard('api')->logout();
+    //     return $this->response->noContent();
+    // }
 
     public function destroy()
     {
