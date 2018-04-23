@@ -68,24 +68,15 @@ class AuthorizationsController extends Controller
             break;
         }
 
-        // $token = Auth::guard('api')->fromUser($user);
-        // return $this->respondWithToken($token)->setStatusCode(201);
-
         $result = $this->getBearerTokenByUser($user, '1', false);
         return $this->response->array($result)->setStatusCode(201);
     }
 
     public function update()
     {
-        $token = Auth::guard('api')->refresh();
+        $this->user()->token()->refresh();
         return $this->respondWithToken($token);
     }
-
-    // public function destroy()
-    // {
-    //     Auth::guard('api')->logout();
-    //     return $this->response->noContent();
-    // }
 
     public function destroy()
     {
