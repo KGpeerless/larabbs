@@ -48,6 +48,16 @@ class User extends Authenticatable implements JWTSubject
         return $this->hasMany(Reply::class);
     }
 
+    public function groups()
+    {
+        return $this->belongsToMany(Group::class, 'users_groups', 'user_id', 'group_id');
+    }
+
+    public function friends()
+    {
+        return $this->belongsToMany(Friend::class)->withPivot('name', 'status');
+    }
+
     public function isAuthorOf($model)
     {
         return $this->id == $model->user_id;
