@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFriendsAskTable extends Migration
+class CreateFriendAsksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateFriendsAskTable extends Migration
      */
     public function up()
     {
-        Schema::create('friends_ask', function (Blueprint $table) {
+        Schema::create('friend_asks', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
             $table->integer('friend_user_id');
@@ -30,6 +30,6 @@ class CreateFriendsAskTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('friend_ask');
+        Schema::dropIfExists('friend_asks');
     }
 }

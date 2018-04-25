@@ -8,11 +8,13 @@ use Illuminate\Http\Request;
 use App\Transformers\FriendAskTransformer;
 use App\Http\Requests\Api\FriendAskRequest;
 
-class FriendsAskController extends Controller
+class FriendAsksController extends Controller
 {
-    public function index(FriendAskRequest $request)
+    public function index(FriendAsk $friendAsk)
     {
-        //
+        $friendAsks = $this->user()->friendAsks()->paginate();
+
+        return $this->response->paginator($friendAsks, new FriendAskTransformer);
     }
 
     public function store(FriendAskRequest $request, FriendAsk $friendAsk)

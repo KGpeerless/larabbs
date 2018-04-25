@@ -215,3 +215,78 @@ body {
         background-color: #d15b47 !important;;
     }
 }
+
+/* Groups */
+.padding-0 {
+    padding: 0px;
+}
+
+.group-action {
+    background-color: #eee
+}
+
+.group-avatar {
+    padding: 0px;
+    width: 50px;
+    height: 50px;
+}
+
+.group-friends {
+    border-bottom: 1px solid #e3e3e3;
+    padding: 10px;
+}
+
+.group-message {
+    background: #2ab27b; 
+    color: #fff;
+    height: 50px; 
+    display: inline-block; 
+    line-height: 50px; 
+    padding: 0px 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.group-message-left {
+    padding: 10px; 
+    margin-bottom: 1px solid #eee; 
+    position: absolute; 
+    left: 0px;
+}
+
+.group-message-right {
+    padding: 10px; 
+    margin-bottom: 1px solid #eee; 
+    position: absolute; 
+    right: 0px;
+}
+
+.group {
+    height: 600px;
+}
+
+.group-friends {
+    border-right: 1px solid #e3e3e3; 
+    height: 600px;
+}
+
+.group-messages {
+    height: 600px;
+}
+
+.group-messages-up {
+    height: 430px;
+}
+
+.group-messages-down {
+    border-top: 1px solid #d1d1d1;
+
+    textarea {
+        height: 169px; 
+        border: 0px;
+    }
+}
+
+.mt-70 {
+    margin-top: 70px;
+}

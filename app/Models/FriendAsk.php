@@ -11,7 +11,7 @@ class FriendAsk extends Model
         notify as protected laravelNotify;
     }
 
-    protected $table = 'friends_ask';
+    protected $table = 'friend_asks';
     protected $fillable = ['user_id', 'friend_user_id', 'content', 'status'];
 
     public function user()

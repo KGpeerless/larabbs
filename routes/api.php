@@ -99,14 +99,17 @@ $api->version('v1', [
         // 当前登录用户权限
         $api->get('user/permissions', 'PermissionsController@index')
             ->name('api.user.permissions.index');
-        // 好友通过
-        $api->post('friends', 'FriendsController@store')
-            ->name('api.friends.store');
+        // 好友申请列表 
+        $api->get('friend/asks', 'FriendAsksController@index')
+            ->name('api.friend_asks.index');
         // 好友申请    
-        $api->post('friends/ask', 'FriendsAskController@store')
-            ->name('api.friends_ask.store');
-        // 好友申请    
-        $api->patch('friends/ask/{friendAsk}', 'FriendsAskController@update')
-            ->name('api.friends_ask.update');
+        $api->post('friend/asks', 'FriendAsksController@store')
+            ->name('api.friend_asks.store');
+        // 好友申请通过／拒绝    
+        $api->patch('friend/asks/{friendAsk}', 'FriendAsksController@update')
+            ->name('api.friend_asks.update');
+        // 好友列表    
+        $api->get('friends', 'FriendsController@index')
+            ->name('api.friends.index');
     });
 });

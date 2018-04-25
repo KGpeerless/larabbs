@@ -12,17 +12,8 @@ class FriendsController extends Controller
 {
     public function index(Request $request)
     {
-        //
-    }
+        $firends = $this->user()->friends()->paginate(20);
 
-
-    public function store(FriendRequest $request, Friend $friend)
-    {
-        $friend->fill($request->all());
-        $friend->user_id = $this->user()->id;
-        $friend->save();
-
-        return $this->response->item($friend, new FriendTransformer())
-            ->setStatusCode(201);
+        return $this->response->paginator($firends, new FriendTransformer);
     }
 }
