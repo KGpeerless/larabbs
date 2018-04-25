@@ -13,7 +13,7 @@
                         @foreach($groups as $key => $group)
                             @foreach($group->users as $user)
                                 @if ($user->id != Auth::id())
-                                <div class="col-md-12 group-friends @if($key == 0) group-action @endif">
+                                <div class="col-md-12 group-friend @if($key == 0) group-action @endif">
                                     <div class="col-md-4 padding-0">
                                         <img src="{{ $user->avatar }}" class="group-avatar"> 
                                     </div>
@@ -29,12 +29,12 @@
                         <div class="col-md-12 padding-0 group-messages-up">
                             <div class="group-message-left">
                                 <img src="{{ $user->avatar }}" class="group-avatar"> 
-                                <span class="group-message-content">哈哈哈哈哈</span>
+                                <span class="group-message">哈哈哈哈哈</span>
                             </div>
                             
                             <div class="group-message-right mt-70">
-                                <span class="group-message-content">哈哈哈哈哈</span>
-                                <img src="http://larabbs.test/uploads/images/avatars/201804/25//1_1524637152_4SnXa3auGf.jpg" class="group-avatar"> 
+                                <span class="group-message">哈哈哈哈哈</span>
+                                <img src="{{ Auth::user()->avatar }}" class="group-avatar"> 
                             </div>
                         </div>
                         <div class="col-md-12 padding-0 group-messages-down">

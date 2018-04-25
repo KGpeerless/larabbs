@@ -231,20 +231,9 @@ body {
     height: 50px;
 }
 
-.group-friends {
+.group-friend {
     border-bottom: 1px solid #e3e3e3;
     padding: 10px;
-}
-
-.group-message {
-    background: #2ab27b; 
-    color: #fff;
-    height: 50px; 
-    display: inline-block; 
-    line-height: 50px; 
-    padding: 0px 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
 }
 
 .group-message-left {
@@ -272,6 +261,16 @@ body {
 
 .group-messages {
     height: 600px;
+    span {
+        background: #2ab27b; 
+        color: #fff;
+        height: 50px; 
+        display: inline-block; 
+        line-height: 50px; 
+        padding: 0px 10px;
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+    }
 }
 
 .group-messages-up {
