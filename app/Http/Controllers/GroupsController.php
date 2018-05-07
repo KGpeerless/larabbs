@@ -11,6 +11,11 @@ class GroupsController extends Controller
 {
     public function index(Request $request, User $user, Link $link)
     {
+        // $user = Auth::user();
+        // $friend = $user->friends;
+        // $friend_users = $friend->pivot;
+        // dd($friend_users);
+
         $groups = Auth::user()->groups()->with(['messages', 'messages.user', 'users'])->get();
         $active_users = $user->getActiveUsers();
         $links = $link->getAllCached();
