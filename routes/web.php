@@ -42,3 +42,18 @@ Route::resource('notifications', 'NotificationsController', ['only' => ['index']
 Route::get('permission-denied', 'PagesController@permissionDenied')->name('permission-denied');
 
 Route::get('groups', 'GroupsController@index')->name('groups.index');
+
+// room
+Route::group(['middleware' => 'auth', 'prefix' => 'room'], function () {
+    Route::get('create', 'RoomController@create')->name('room.create');
+    Route::get('lists', 'RoomController@lists')->name('room.lists');
+    Route::post('add', 'RoomController@add')->name('room.add');
+    Route::get('/{id}/edit', 'RoomController@edit')->name('room.edit');
+    Route::post('/{id}/update', 'RoomController@update')->name('room.update');
+    Route::get('{id}', 'RoomController@chat')->name('chat');
+    Route::get("/{id}/join", 'RoomController@join')->name('join');
+});
+
+Route::group(['middleware' => 'auth', 'prefix' => 'api/room' , 'namespace' => 'Api'], function () {
+    Route::post("/{id}/join" , 'RoomController@join')->name('join');
+});
